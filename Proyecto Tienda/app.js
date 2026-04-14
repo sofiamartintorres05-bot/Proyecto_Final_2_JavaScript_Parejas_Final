@@ -31,3 +31,19 @@ function inventarioTotal() {
 function totalVentas() {
   return productos.reduce((acc, p) => acc + p.precio * p.ventas, 0);
 }
+
+function ordenarPorPrecio() {
+  return [...productos].sort((a, b) => b.precio - a.precio);
+}
+
+function buscar(nombre) {
+  return productos.find(p => p.nombre === nombre);
+}
+
+function hayAgotados() {
+  return productos.some(p => p.stock === 0);
+}
+
+function todosDisponibles() {
+  return productos.every(p => p.stock > 0);
+}

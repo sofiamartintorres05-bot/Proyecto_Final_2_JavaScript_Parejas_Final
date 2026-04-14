@@ -47,3 +47,11 @@ function hayAgotados() {
 function todosDisponibles() {
   return productos.every(p => p.stock > 0);
 }
+
+function clasificar(precio) {
+  switch (true) {
+    case precio < 50000: return "Económico";
+    case precio <= 200000: return "Medio";
+    default: return "Alto";
+  }
+}

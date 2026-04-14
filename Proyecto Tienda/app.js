@@ -75,3 +75,16 @@ function valorTotalStock() {
 function masVendido() {
   return [...productos].sort((a, b) => b.ventas - a.ventas)[0];
 }
+
+function reporteFinal() {
+  let masCaro = productos.reduce((max, p) => p.precio > max.precio ? p : max);
+  let masBarato = productos.reduce((min, p) => p.precio < min.precio ? p : min);
+  let masVendido = productos.reduce((max, p) => p.ventas > max.ventas ? p : max);
+
+  let valorInventario = inventarioTotal();
+  let totalVendidas = productos.reduce((acc, p) => acc + p.ventas, 0);
+  let agotados = productos.filter(p => p.stock === 0).length;
+
+  console.log(masCaro.nombre, masBarato.nombre, masVendido.nombre);
+  console.log(valorInventario, totalVendidas, agotados);
+}

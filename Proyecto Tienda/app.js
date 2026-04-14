@@ -9,3 +9,14 @@ const productos = [
 function mostrar() {
     productos.forEach(p => console.log(p));
 }
+
+
+function bajoStock(){
+    return productos.filter(p => p.stock
+        > 0 && p.stock <=5);
+}
+
+function agotados(){
+    return productos.filter(p => p.stock 
+        ===0);
+}

@@ -28,3 +28,6 @@ function listaSimple(){
 function inventarioTotal() {
   return productos.reduce((acc, p) => acc + p.precio * p.stock, 0);
 }
+function totalVentas() {
+  return productos.reduce((acc, p) => acc + p.precio * p.ventas, 0);
+}

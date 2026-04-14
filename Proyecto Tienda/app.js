@@ -5,3 +5,7 @@ const productos = [
  { id: 4, nombre: "USB", categoria: "Accesorio", precio: 30000, stock: 0, ventas: 15 },
  { id: 5, nombre: "Diadema", categoria: "Audio", precio: 90000, stock: 8, ventas: 6 }
 ];
+
+function mostrar() {
+    productos.forEach(p => console.log(p));
+}

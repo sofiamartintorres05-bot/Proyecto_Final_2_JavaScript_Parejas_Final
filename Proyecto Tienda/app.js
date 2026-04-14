@@ -88,3 +88,16 @@ function reporteFinal() {
   console.log(masCaro.nombre, masBarato.nombre, masVendido.nombre);
   console.log(valorInventario, totalVendidas, agotados);
 }
+
+let opcion;
+
+while (opcion !== 0) {
+  opcion = parseInt(prompt("1.Mostrar 2.Stock 3.Agotados 4.Reporte 0.Salir"));
+
+  switch (opcion) {
+    case 1: mostrar(); break;
+    case 2: console.log(bajoStock()); break;
+    case 3: console.log(agotados()); break;
+    case 4: reporteFinal(); break;
+  }
+}

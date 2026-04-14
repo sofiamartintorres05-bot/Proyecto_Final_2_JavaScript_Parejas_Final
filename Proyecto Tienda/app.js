@@ -24,3 +24,7 @@ function agotados(){
 function listaSimple(){
     return productos.map(p => `${p.nombre} - $${p.precio}`);
 }
+
+function inventarioTotal() {
+  return productos.reduce((acc, p) => acc + p.precio * p.stock, 0);
+}

@@ -20,3 +20,7 @@ function agotados(){
     return productos.filter(p => p.stock 
         ===0);
 }
+
+function listaSimple(){
+    return productos.map(p => `${p.nombre} - $${p.precio}`);
+}

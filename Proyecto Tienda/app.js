@@ -55,3 +55,23 @@ function clasificar(precio) {
     default: return "Alto";
   }
 }
+
+function disponiblesOrdenados() {
+  return productos
+    .filter(p => p.stock > 0)
+    .sort((a, b) => b.precio - a.precio);
+}
+
+function mensajesReabastecer() {
+  return productos
+    .filter(p => p.stock === 0)
+    .map(p => `Reabastecer: ${p.nombre}`);
+}
+
+function valorTotalStock() {
+  return productos.reduce((acc, p) => acc + p.precio * p.stock, 0);
+}
+
+function masVendido() {
+  return [...productos].sort((a, b) => b.ventas - a.ventas)[0];
+}
